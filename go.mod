@@ -1,3 +1,3 @@
-module github.com/reggieanim/leet.git
+module github.com/reggieanim/leet
 
 go 1.19

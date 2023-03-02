@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/reggieanim/leet/slidingWindow"
+	"github.com/reggieanim/leet.git/slidingWindow"
 )
 
 func main() {
