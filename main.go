@@ -1,11 +1,10 @@
 package main
 
 import (
-	"os"
-
-	"github.com/reggieanim/leet.git/slidingWindow"
+	"github.com/reggieanim/leet/slidingWindow"
 )
 
 func main() {
-	slidingWindow.Get().Description(os.Stdout)
+	arr := []int{100, 200, 300, 400}
+	slidingWindow.Get().MaxSumOfSubArrOfSizeK(arr, 4).Problem().Solution()
 }
