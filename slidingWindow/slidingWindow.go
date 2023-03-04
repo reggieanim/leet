@@ -71,3 +71,34 @@ func (sw *slidingWindow) MaxSumOfSubArrOfSizeK(arr []int, k int) *slidingWindow 
 	sw.solution = maxSum
 	return sw
 }
+
+func (sw *slidingWindow) SmallestSubArrayWithGivenSum(arr []int, k int) *slidingWindow {
+	sw.problem = "Given an array of positive numbers and a positive number ‘S’, find the length of the smallest contiguous subarray whose sum is greater than or equal to ‘S’. Return 0, if no such subarray exists."
+	maxSum := 0
+	sum := 0
+	windowStart := 0
+	// Create a loop which simulates and expanding window
+	for windowEnd := 0; windowEnd < len(arr); windowEnd++ {
+		// Get character in the window end
+		rightChar := arr[windowEnd]
+
+		// Add to sum tracker
+		sum += rightChar
+
+		// When we get to the size of window determined by k
+		if sum >= k {
+			// Get the maximum sum
+			maxSum = int(math.Max(float64(maxSum), float64(windowEnd-windowStart+1)))
+			// Get character at the start of window
+			leftChar := arr[windowStart]
+
+			// Subtract from sum tracker
+			sum -= leftChar
+
+			// Slide
+			windowStart++
+		}
+	}
+	sw.solution = maxSum
+	return sw
+}
